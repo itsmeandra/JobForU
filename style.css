@@ -1,0 +1,125 @@
+/* File: style.css */
+/* Deskripsi: Stylesheet kustom untuk mempercantik dan menyeragamkan tampilan website JobForU. */
+
+/* Variabel Warna dan Font untuk konsistensi */
+:root {
+  --primary-color: #4f46e5; /* Indigo-600 dari Tailwind */
+  --primary-hover: #4338ca; /* Indigo-700 */
+  --danger-color: #ef4444; /* Red-500 */
+  --danger-hover: #dc2626; /* Red-600 */
+  --success-color: #22c55e; /* Green-500 */
+  --light-gray: #f3f4f6; /* Gray-100 */
+  --medium-gray: #6b7280; /* Gray-500 */
+  --dark-gray: #1f2937; /* Gray-800 */
+  --font-family: "Inter", sans-serif;
+  --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --card-shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* Pengaturan Dasar Body */
+body {
+  font-family: var(--font-family);
+  background-color: var(--light-gray);
+  color: var(--dark-gray);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Styling untuk Kartu/Kontainer Utama */
+.card {
+  background-color: white;
+  border-radius: 0.75rem; /* 12px */
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+/* Styling Tombol Universal */
+.btn {
+  display: inline-block;
+  font-weight: 600; /* semi-bold */
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem; /* 8px */
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none; /* Untuk tag <a> */
+}
+
+.btn:hover {
+  transform: scale(1.03);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: var(--danger-hover);
+}
+
+.btn-secondary {
+  background-color: #e5e7eb; /* Gray-200 */
+  color: var(--dark-gray);
+}
+
+.btn-secondary:hover {
+  background-color: #d1d5db; /* Gray-300 */
+}
+
+/* Styling Form Input Universal */
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db; /* Gray-300 */
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.3);
+}
+
+/* Styling untuk Navbar */
+.navbar {
+  background-color: white;
+  box-shadow: var(--card-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* Animasi Fade-in Sederhana */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
